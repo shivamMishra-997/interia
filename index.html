@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Interior & Exterior Designer-sample template
+</title>
+<meta name="description" content="Interior and exterior designer shaping villas, homes and workplaces from first sketch to last light.">
+<meta name="theme-color" content="#050505">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#050505;--ink:#f1ebe0;--mut:#8f897e;--red:#ff4a22;--ln:rgba(241,235,224,.16);--pad:clamp(20px,4.5vw,64px)}
+*{box-sizing:border-box;margin:0;padding:0}
+html.lenis,html.lenis body{height:auto}.lenis.lenis-smooth{scroll-behavior:auto!important}.lenis.lenis-stopped{overflow:hidden}
+body{background:var(--bg);color:var(--ink);font:400 clamp(15px,1.15vw,17px)/1.65 'Hanken Grotesk',system-ui,sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}ul{list-style:none}img{display:block;max-width:100%}
+:focus-visible{outline:2px solid var(--red);outline-offset:4px}
+#gl{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+header,main,footer{position:relative;z-index:1}
+h1,h2,h3{font-family:'Big Shoulders Display',Impact,'Arial Narrow',sans-serif;font-weight:800;text-transform:uppercase;line-height:.88}
+.wrap{padding:0 var(--pad)}
+/* header */
+header{position:fixed;top:0;left:0;right:0;z-index:7;display:flex;justify-content:space-between;align-items:center;padding:18px var(--pad);mix-blend-mode:difference;color:#fff}
+.logo{font:800 26px/1 'Big Shoulders Display',Impact,sans-serif;letter-spacing:.02em}
+nav{display:flex;gap:clamp(18px,3vw,44px);align-items:center;font-size:13px;letter-spacing:.14em;text-transform:uppercase}
+nav .lk{display:none}
+#mb{background:none;border:0;color:inherit;font:inherit;letter-spacing:inherit;text-transform:inherit;cursor:pointer}
+@media(min-width:861px){nav .lk{display:inline}}
+#menu{position:fixed;inset:0;z-index:6;background:var(--bg);display:flex;flex-direction:column;justify-content:center;gap:6px;padding:var(--pad);transform:translateY(-101%);transition:transform .8s cubic-bezier(.7,0,.2,1)}
+#menu.o{transform:none}
+#menu a{font:800 clamp(52px,12vw,130px)/.95 'Big Shoulders Display',Impact,sans-serif;text-transform:uppercase;width:max-content;transition:color .3s}
+#menu a:hover{color:var(--red)}
+/* hero */
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding:120px var(--pad) 44px}
+.hero h1{font-size:clamp(70px,17.5vw,300px);letter-spacing:-.015em}
+.ln{display:block;overflow:hidden;padding-bottom:.06em}
+.ln span{display:block;transform:translateY(112%);animation:up 1.3s cubic-bezier(.2,.8,.2,1) forwards}
+.ln:nth-child(2) span{animation-delay:.12s}.ln:nth-child(3) span{animation-delay:.24s;color:transparent;-webkit-text-stroke:2px var(--ink)}
+@keyframes up{to{transform:none}}
+.hero .row{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-top:clamp(22px,3vw,40px);flex-wrap:wrap}
+.hero p{max-width:34ch;color:var(--mut);font-size:clamp(15px,1.3vw,19px)}
+.hint{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--red)}
+/* sections */
+.sec{padding:clamp(90px,14vw,200px) var(--pad)}
+.intro h2{font-size:clamp(48px,9vw,150px);max-width:14ch}
+.intro .meta{display:flex;gap:clamp(16px,3vw,48px);margin-top:clamp(28px,4vw,56px);flex-wrap:wrap;align-items:flex-end;justify-content:space-between}
+.intro p{max-width:40ch;color:var(--mut)}
+.chips{display:flex;gap:10px;flex-wrap:wrap}.chips span{border:1px solid var(--ln);border-radius:99px;padding:6px 16px;font-size:14px;background:rgba(5,5,5,.6)}
+.cap h2{font-size:clamp(40px,7vw,112px);max-width:16ch;margin-bottom:clamp(40px,6vw,90px)}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,6vw,100px)}
+.cols h3{font-size:clamp(28px,3vw,44px);color:var(--red);padding-bottom:14px;border-bottom:1px solid var(--ln)}
+.cols li{padding:clamp(14px,1.6vw,22px) 0;border-bottom:1px solid var(--ln);display:flex;flex-direction:column;background:linear-gradient(rgba(5,5,5,.55),rgba(5,5,5,.55))}
+.cols li b{font-weight:600;font-size:clamp(17px,1.5vw,22px)}.cols li span{color:var(--mut)}
+/* projects */
+.pj{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(18px,3vw,48px);align-items:end;margin-bottom:clamp(90px,13vw,220px)}
+.pj figure{grid-column:1/8;aspect-ratio:7/5;overflow:hidden;position:relative;background:linear-gradient(135deg,#1a1713,#0c0b09);clip-path:inset(14% 10% 14% 10%);transition:clip-path 1.4s cubic-bezier(.2,.8,.2,1)}
+.pj.in figure{clip-path:inset(0)}
+.pj figure img{position:absolute;left:0;top:-12%;width:100%;height:124%;object-fit:cover;will-change:transform}
+.pj .tx{grid-column:8/13;background:linear-gradient(rgba(5,5,5,.7),rgba(5,5,5,.7))}
+.pj:nth-of-type(even) figure{grid-column:6/13;order:2}.pj:nth-of-type(even) .tx{grid-column:1/6;order:1}
+.pj small{display:block;color:var(--red);font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px}
+.pj h3{font-size:clamp(46px,6.4vw,104px);margin-bottom:18px}
+.pj p{color:var(--mut);max-width:36ch}
+.go{display:inline-block;margin-top:24px;padding-bottom:4px;border-bottom:1px solid var(--ink);font-size:14px;letter-spacing:.12em;text-transform:uppercase;transition:color .3s,border-color .3s}
+.go:hover{color:var(--red);border-color:var(--red)}
+/* about */
+.about{display:grid;grid-template-columns:5fr 7fr;gap:clamp(28px,6vw,100px);align-items:center}
+.about figure{aspect-ratio:4/5;overflow:hidden;background:#14110e}.about img{width:100%;height:100%;object-fit:cover}
+.about h2{font-size:clamp(44px,7.4vw,124px);margin-bottom:28px}
+.about p{color:var(--mut);max-width:46ch}.about .sig{margin-top:30px;color:var(--ink);font-weight:600}
+.stats{display:flex;gap:clamp(24px,4vw,64px);margin-top:36px;flex-wrap:wrap}.stats b{display:block;font:800 clamp(44px,5vw,72px)/1 'Big Shoulders Display',Impact,sans-serif;color:var(--red)}.stats span{font-size:14px;color:var(--mut)}
+/* contact */
+.contact h2{font-size:clamp(56px,13vw,230px);margin-bottom:clamp(40px,6vw,90px)}
+.contact h2 em{font-style:normal;color:var(--red)}
+form{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,40px);max-width:980px;background:linear-gradient(rgba(5,5,5,.7),rgba(5,5,5,.7));padding:6px 0}
+label{display:flex;flex-direction:column;gap:6px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut)}
+label.w{grid-column:1/-1}
+input,textarea{background:none;border:0;border-bottom:1px solid var(--ln);color:var(--ink);font:400 18px 'Hanken Grotesk',sans-serif;padding:10px 0;border-radius:0;resize:none;transition:border-color .3s}
+input:focus,textarea:focus{outline:0;border-color:var(--red)}
+.btn{grid-column:1/-1;justify-self:start;background:var(--red);color:#050505;border:0;border-radius:99px;padding:16px 34px;font:600 14px 'Hanken Grotesk',sans-serif;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:transform .3s}
+.btn:hover{transform:scale(1.05)}
+#ok{grid-column:1/-1;color:var(--red);min-height:1.4em}
+footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:28px var(--pad);border-top:1px solid var(--ln);font-size:13px;color:var(--mut);background:var(--bg)}
+@media(max-width:860px){
+ .cols,.about,form{grid-template-columns:1fr}
+ .pj{display:block}.pj figure,.pj:nth-of-type(even) figure{aspect-ratio:4/5;margin-bottom:24px}
+ .about figure{max-width:420px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.ln span{transform:none}.pj figure{clip-path:none}}
+</style>
+</head>
+<body>
+<canvas id="gl" aria-hidden="true"></canvas>
+<header>
+  <a class="logo" href="#top" aria-label="Aarav Kapoor, home">SM</a>
+  <nav>
+    <a class="lk" href="#capabilities">Capabilities</a><a class="lk" href="#projects">Projects</a><a class="lk" href="#about">About</a><a class="lk" href="#contact">Contact</a>
+    <button id="mb" aria-expanded="false" aria-controls="menu">Menu</button>
+  </nav>
+</header>
+<div id="menu" role="dialog" aria-label="Menu">
+  <a href="#capabilities">Capabilities</a><a href="#projects">Projects</a><a href="#about">About</a><a href="#contact">Contact</a>
+</div>
+
+<main id="top">
+  <section class="hero">
+    <h1><span class="ln"><span>I design</span></span><span class="ln"><span>spaces</span></span><span class="ln"><span>that breathe.</span></span></h1>
+    <div class="row">
+      <p>Interior and exterior designer shaping villas, homes and workplaces, from the first sketch to the last light.</p>
+      <span class="hint">Scroll to follow the thread</span>
+    </div>
+  </section>
+
+  <section class="sec intro">
+    <h2>From how people live to how it feels.</h2>
+    <div class="meta">
+      <p>I join the rooms to the building around them, so the facade, the garden and the sofa all answer the same brief.</p>
+      <div class="chips"><span>Light</span><span>Form</span><span>Material</span></div>
+    </div>
+  </section>
+
+  <section class="sec cap" id="capabilities">
+    <h2>I design the room and the building around it.</h2>
+    <div class="cols">
+      <div><h3>Interiors</h3><ul>
+        <li><b>Space planning</b><span>Layouts that fit how you actually live.</span></li>
+        <li><b>Material and colour</b><span>Palettes you can touch before you approve them.</span></li>
+        <li><b>Lighting design</b><span>Light that changes with the hours of the day.</span></li>
+        <li><b>Custom furniture</b><span>Pieces drawn for one room only.</span></li>
+        <li><b>Styling</b><span>The final layer, placed with care.</span></li>
+      </ul></div>
+      <div><h3>Exteriors</h3><ul>
+        <li><b>Facade design</b><span>A first impression that holds up over years.</span></li>
+        <li><b>Landscape</b><span>Gardens that connect inside to outside.</span></li>
+        <li><b>Outdoor living</b><span>Terraces, pools and shaded courts.</span></li>
+        <li><b>3D visualisation</b><span>Walk through it before it is built.</span></li>
+        <li><b>Site supervision</b><span>Drawings that turn into real buildings.</span></li>
+      </ul></div>
+    </div>
+  </section>
+
+  <section class="sec" id="projects">
+    <article class="pj"><figure><img loading="lazy" alt="Modern villa with a pool at dusk" src="villa.jpg" crossorigin="anonymous" onerror="this.remove()"></figure>
+      <div class="tx"><small>01 / Villa architecture</small><h3>Aurora Residence</h3><p>A courtyard villa that follows the sun from sunrise to dusk. Mumbai, India.</p><a class="go" href="#contact">Explore project</a></div></article>
+    <article class="pj"><figure><img loading="lazy" alt="Warm minimal living room" src="Quite.png" crossorigin="anonymous" onerror="this.remove()"></figure>
+      <div class="tx"><small>02 / Living interiors</small><h3>The Quiet Room</h3><p>Warm stone, oak and filtered light for slow evenings. Ahmedabad, India.</p><a class="go" href="#contact">Explore project</a></div></article>
+    <article class="pj"><figure><img loading="lazy" alt="Contemporary house facade" src="monolith.png" crossorigin="anonymous" onerror="this.remove()"></figure>
+      <div class="tx"><small>03 / Exterior and facade</small><h3>Monolith House</h3><p>Clean volumes, deep shadow lines and a single material. Pune, India.</p><a class="go" href="#contact">Explore project</a></div></article>
+    <article class="pj"><figure><img loading="lazy" alt="Modern interior with sofa and large windows" src="Amber apartment.png" crossorigin="anonymous" onerror="this.remove()"></figure>
+      <div class="tx"><small>04 / Residential interiors</small><h3>Ember Apartment</h3><p>A compact home that feels generous through colour and joinery. Goa, India.</p><a class="go" href="#contact">Explore project</a></div></article>
+    <article class="pj"><figure><img loading="lazy" alt="Glass and concrete modern house exterior" src="land.jpg" crossorigin="anonymous" onerror="this.remove()"></figure>
+      <div class="tx"><small>05 / Landscape and exterior</small><h3>Terrace Nine</h3><p>Stepped gardens and a long pool that frame the view. Jaipur, India.</p><a class="go" href="#contact">Explore project</a></div></article>
+  </section>
+
+  <section class="sec about" id="about">
+    <figure><img loading="lazy" alt="Designed interior detail" src="space.jpg" crossorigin="anonymous" onerror="this.remove()"></figure>
+    <div>
+      <h2>Every space carries a human imprint.</h2>
+      <p>Mine comes from listening first, drawing second, and staying on site until the last detail is right. Each project is one continuous thread from plot to furniture.</p>
+      <div class="stats"><div><b>12</b><span>Years of practice</span></div><div><b>80+</b><span>Homes delivered</span></div><div><b>6</b><span>Design awards</span></div></div>
+      <p class="sig">Aarav Kapoor, designer and site lead.</p>
+    </div>
+  </section>
+
+  <section class="sec contact" id="contact">
+    <h2>Have a space worth <em>reimagining?</em> Let’s talk.</h2>
+    <form id="f">
+      <label>Your name<input name="n" required autocomplete="name"></label>
+      <label>Your email<input name="e" type="email" required autocomplete="email"></label>
+      <label class="w">Tell me about the space<textarea name="m" rows="3" required></textarea></label>
+      <button class="btn" type="submit">Send message</button><div id="ok" role="status"></div>
+    </form>
+  </section>
+</main>
+<footer><span>© 2026 Aarav Kapoor. Interior and exterior design.</span><a href="#top">Back to top</a><span>Sample concept website</span></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+<script>
+(()=>{
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const lenis=(!rm&&window.Lenis)?new Lenis({lerp:.085}):null;
+/* menu + anchors */
+const mn=$('#menu'),mb=$('#mb');
+function setMenu(o){mn.classList.toggle('o',o);mb.textContent=o?'Close':'Menu';mb.setAttribute('aria-expanded',o);lenis&&(o?lenis.stop():lenis.start())}
+mb.onclick=()=>setMenu(!mn.classList.contains('o'));
+$$('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const t=$(a.getAttribute('href'));if(!t)return;e.preventDefault();setMenu(false);lenis?lenis.scrollTo(t,{duration:1.6}):t.scrollIntoView({behavior:'smooth'})}));
+addEventListener('keydown',e=>e.key==='Escape'&&setMenu(false));
+/* project reveal */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.2});
+$$('.pj').forEach(p=>io.observe(p));
+/* form */
+$('#f').onsubmit=e=>{e.preventDefault();$('#ok').textContent='Message sent. This is a sample form, so nothing was delivered.';e.target.reset()};
+/* WebGL: vermilion thread + architectural wireframes */
+let R;try{R=new THREE.WebGLRenderer({canvas:$('#gl'),antialias:true,alpha:true})}catch(e){R=null}
+const imgs=$$('.pj figure img');
+let render=()=>{};
+if(R){
+ R.setPixelRatio(Math.min(devicePixelRatio,2));
+ const S=new THREE.Scene(),C=new THREE.PerspectiveCamera(40,1,.1,100);C.position.z=10;
+ const tube=new THREE.Mesh(new THREE.BufferGeometry(),new THREE.MeshBasicMaterial({color:0xff4a22}));S.add(tube);
+ const tip=new THREE.Mesh(new THREE.SphereGeometry(1,20,20),new THREE.MeshBasicMaterial({color:0xfff1e0}));S.add(tip);
+ const lm=new THREE.LineBasicMaterial({color:0xf1ebe0,transparent:true,opacity:.22});
+ const dims=[[2.4,3.2,2.4],[3,1.6,2],[1.8,2.6,1.8],[2.8,2.2,2.8],[2,3.4,2]];
+ const boxes=dims.map(d=>{const b=new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(...d)),lm);S.add(b);return b});
+ let curve,vh,vw,wpp,L,docH,N=800,RS=6,mx=0,intro=0,t0=performance.now();
+ function build(){
+  const w=innerWidth,h=innerHeight;R.setSize(w,h,false);C.aspect=w/h;C.updateProjectionMatrix();
+  vh=2*Math.tan(C.fov*Math.PI/360)*C.position.z;vw=vh*C.aspect;wpp=vh/h;
+  docH=document.documentElement.scrollHeight;L=(docH-h)*wpp+vh*.3;
+  const n=Math.max(8,Math.round(L/vh*4)),pts=[];
+  for(let i=0;i<=n;i++)pts.push(new THREE.Vector3(Math.sin(i*1.35+.6)*vw*.36,-i/n*L,Math.cos(i*1.9)*1.6));
+  curve=new THREE.CatmullRomCurve3(pts);
+  tube.geometry.dispose();tube.geometry=new THREE.TubeGeometry(curve,N,vh*.0036,RS,false);
+  tip.scale.setScalar(vh*.011);
+  boxes.forEach((b,i)=>{b.position.set((i%2?-1:1)*vw*.3,-(i+.6)/boxes.length*L,-3);b.scale.setScalar(Math.min(1,vw/9)+.25)});
+ }
+ build();addEventListener('load',build);
+ let rt;new ResizeObserver(()=>{clearTimeout(rt);rt=setTimeout(build,120)}).observe(document.body);
+ addEventListener('pointermove',e=>{mx=(e.clientX/innerWidth-.5)*2});
+ render=()=>{
+  const y=scrollY,t=(performance.now()-t0)/1000;
+  intro+=(1-intro)*.035;
+  const u=Math.min(1,Math.max(.002,(y*wpp+vh*.3*intro)/L));
+  tube.geometry.setDrawRange(0,Math.floor(u*N)*RS*6);
+  tip.position.copy(curve.getPointAt(u));
+  C.position.y=-y*wpp;C.position.x+=(mx*.5-C.position.x)*.05;
+  boxes.forEach((b,i)=>{b.rotation.y=t*.12*(i%2?-1:1)+y*.0006;b.rotation.x=.35+Math.sin(t*.2+i)*.1});
+  R.render(S,C);
+ };
+}
+/* frame loop + image parallax */
+function frame(t){
+ lenis&&lenis.raf(t);
+ if(!rm){const vh=innerHeight;imgs.forEach(im=>{const r=im.parentNode.getBoundingClientRect();if(r.bottom>0&&r.top<vh)im.style.transform=`translateY(${(r.top+r.height/2-vh/2)*-.09}px)`})}
+ render();requestAnimationFrame(frame);
+}
+requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>
